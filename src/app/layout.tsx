@@ -3,15 +3,15 @@ import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
-import { ThemeSwitcher } from "./_components/theme-switcher";
+import ThemeSwitcher from "./_components/theme-switcher";
 
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Amy's software development portfolio and blog`,
-  description: `A statically generated portfolio and blog website using Next.js and ${ CMS_NAME }.`,
+  title: `Amy's software development portfolio and blog website`,
+  description: `A statically generated portfolio and blog website using Next.js and ${CMS_NAME}.`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
@@ -46,23 +46,13 @@ export default function RootLayout({
         <link
           rel="mask-icon"
           href="/favicon/safari-pinned-tab.svg"
-          color="#000000"
+          color="#5bbad5"
         />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <meta name="msapplication-TileColor" content="#000000" />
-        <meta
-          name="msapplication-config"
-          content="/favicon/browserconfig.xml"
-        />
-        <meta name="theme-color" content="#000" />
-        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body
-        className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
-      >
-        <ThemeSwitcher />
-        <div className="min-h-screen">{children}</div>
+      <body className={cn(inter.className, "bg-gray-50 dark:bg-gray-900")}>
+        {children}
         <Footer />
+        <ThemeSwitcher />
       </body>
     </html>
   );

@@ -20,7 +20,7 @@ const config: Config = {
         "accent-7": "#333",
         success: "#0070f3",
         cyan: "#79FFE1",
-        primary: "#0B57D0", // blue
+        primary: "#0B57D0", // GM3 ligh theme blue
       },
       spacing: {
         28: "7rem",

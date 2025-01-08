@@ -9,6 +9,8 @@ interface MobileDropdownProps {
 }
 
 const MobileDropdown: React.FC<MobileDropdownProps> = ({ isOpen, closeMenu }) => {
+    if (!isOpen) return null;
+    
     return (
         <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-white bg-opacity-95 backdrop-blur-md absolute top-16 left-0 right-0 shadow-lg`}>
             <nav className="flex flex-col space-y-4 p-6">
