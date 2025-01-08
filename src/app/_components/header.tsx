@@ -1,13 +1,19 @@
-import Link from "next/link";
+import React from "react";
+import HeaderLink from "./header-link";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
-    <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8 flex items-center">
-      <Link href="/" className="hover:underline">
-        Blog
-      </Link>
-      .
-    </h2>
+    <header className="fixed top-0 left-0 right-0 w-full bg-white bg-opacity-30 backdrop-blur-md z-50">
+      <div className="container mx-auto flex justify-between items-center py-4 px-6">
+        <img src="/favicon/favicon-48x48.png" alt="Logo" className="h-10 w-10"/>
+        <nav className="flex space-x-8">
+          <HeaderLink href="/">Home</HeaderLink>
+          <HeaderLink href="/projects">Projects</HeaderLink>
+          <HeaderLink href="/blogs">Blogs</HeaderLink>
+          <HeaderLink href="/about">About Me</HeaderLink>
+        </nav>
+      </div>
+    </header>
   );
 };
 
