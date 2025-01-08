@@ -15,7 +15,7 @@ const HeaderLink: React.FC<HeaderLinkProps> = ({ href, children }) => {
   return (
     <a
       href={href}
-      className={`text-slate-400 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300 
+      className={`text-slate-400 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-700 
         ${ isActive ? "text-slate-950 font-bold" : ""}`}
     >
       {children}
