@@ -13,7 +13,8 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full bg-white bg-opacity-30 backdrop-blur- z-50">
+    // todo：header在长久停留时消失？
+    <header className="fixed top-0 left-0 right-0 w-full bg-white bg-opacity-30 backdrop-blur-md z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
         {/* Logo with responsive sizing */}
         <img

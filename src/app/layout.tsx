@@ -6,11 +6,12 @@ import cn from "classnames";
 import ThemeSwitcher from "./_components/theme-switcher";
 
 import "./globals.css";
+import Header from "./_components/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Amy's software development portfolio and blog website`,
+  title: `Amy - Projects and Blog`,
   description: `A statically generated portfolio and blog website using Next.js and ${CMS_NAME}.`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
@@ -50,6 +51,7 @@ export default function RootLayout({
         />
       </head>
       <body className={cn(inter.className, "bg-gray-50 dark:bg-gray-900")}>
+        <Header />
         {children}
         <Footer />
         <ThemeSwitcher />
