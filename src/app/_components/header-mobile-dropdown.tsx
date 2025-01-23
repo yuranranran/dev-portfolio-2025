@@ -16,7 +16,7 @@ const MobileDropdown: React.FC<MobileDropdownProps> = ({ isOpen, closeMenu }) =>
             <nav className="flex flex-col space-y-4 p-6">
                 <HeaderLink href="/" onClick={closeMenu}>Home</HeaderLink>
                 <HeaderLink href="/projects" onClick={closeMenu}>Projects</HeaderLink>
-                <HeaderLink href="/blogs" onClick={closeMenu}>Blogs</HeaderLink>
+                <HeaderLink href="/posts" onClick={closeMenu}>Blogs</HeaderLink>
                 <HeaderLink href="/about" onClick={closeMenu}>About Me</HeaderLink>
             </nav>
         </div>

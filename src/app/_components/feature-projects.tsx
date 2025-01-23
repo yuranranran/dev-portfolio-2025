@@ -15,7 +15,7 @@ type Props = {
 
 export function FeatureProjects({ projects }: Props) {
   return (
-    <section className="my-28">
+    <section className="my-40">
       {/* Section Title */}
       <h2 className="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
         👏🏻 Feature Projects.

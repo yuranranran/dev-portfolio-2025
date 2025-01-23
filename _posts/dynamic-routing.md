@@ -1,19 +1,103 @@
 ---
-title: "Dynamic Routing and Static Generation"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
+title: "Project Setup: yarn & npm & homebrew"
+excerpt: "Notes and exlaination on what Yarn, npm, and Homebrew are and how they fit into my development workflow."
 coverImage: "/assets/blog/dynamic-routing/cover.jpg"
-date: "2020-03-16T05:35:07.322Z"
+date: "2025-01-06T05:35:07.322Z"
 author:
-  name: JJ Kasper
-  picture: "/assets/blog/authors/jj.jpeg"
+  name: Amy Yuran Liu
+  picture: "/assets/blog/authors/ayl.png"
 ogImage:
   url: "/assets/blog/dynamic-routing/cover.jpg"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+### 1. **What is Yarn?**
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+**Yarn** is a **package manager** for JavaScript, just like `npm` (Node Package Manager). It helps you:
 
-## Lorem Ipsum
+- **Install** and **manage dependencies** (libraries, frameworks, etc.) for your projects.
+- **Ensure consistency** by locking dependencies, preventing "it works on my machine" issues.
+- **Speed up installations** by caching packages and running tasks in parallel.
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+**Why Yarn over npm?**
+
+- **Faster installs**: Yarn can download packages in parallel, unlike npm's sequential downloads.
+- **Lockfile (`yarn.lock`)**: Ensures all team members use the exact same package versions.
+- **Offline installs**: Yarn caches packages, allowing offline installations.
+- **Better dependency resolution**: Reduces version conflicts.
+
+------
+
+### 2. **npm (Node Package Manager)**
+
+- **npm** comes **bundled with Node.js**.
+- It’s the default package manager for JavaScript projects.
+- You can install packages globally (`-g`) or locally for a project.
+- Despite its simplicity, npm sometimes runs into issues with dependency resolution, which Yarn aims to solve.
+
+**Common npm commands**:
+
+```bash
+npm install <package>     # Install a package locally
+npm install -g <package>  # Install globally
+npm uninstall <package>   # Remove a package
+npm init                  # Start a new project (creates package.json)
+```
+
+------
+
+### 3. **Homebrew**
+
+- **Homebrew** is a **package manager for macOS** (and Linux).
+- It manages software installations system-wide, not just JavaScript packages.
+- With Homebrew, you can install tools like Node.js, Yarn, Python, Git, etc.
+
+**Common Homebrew commands**:
+
+```bash
+brew install <package>   # Install a package (e.g., node, yarn)
+brew uninstall <package> # Remove a package
+brew upgrade             # Update all packages
+brew list                # List installed packages
+```
+
+------
+
+### 4. **How They Work Together**
+
+- **Homebrew** installs **Node.js** and **Yarn** on your system.
+- **Node.js** includes **npm** by default.
+- **Yarn** or **npm** manage project-specific dependencies.
+
+------
+
+### Example Workflow
+
+1. Install Node.js and Yarn using Homebrew:
+
+   ```bash
+   brew install node
+   brew install yarn
+   ```
+
+2. Create a new project:
+
+   ```bash
+   mkdir my-website
+   cd my-website
+   yarn init             # Initializes a new project
+   ```
+
+3. Add dependencies (e.g., React, Next.js):
+
+   ```bash
+   yarn add next react react-dom
+   ```
+
+4. Run the project:
+
+   ```bash
+   yarn dev
+   ```
+
+------
+

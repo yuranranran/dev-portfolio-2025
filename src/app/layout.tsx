@@ -54,7 +54,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <ThemeSwitcher />
+        {/* <ThemeSwitcher /> */}
       </body>
     </html>
   );

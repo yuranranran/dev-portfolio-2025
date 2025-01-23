@@ -1,0 +1,11 @@
+/* styles/prism.css */
+@import 'prismjs/themes/prism-okaidia.css';
+
+/* Additional custom styles for code blocks */
+pre {
+  @apply bg-gray-800 p-4 rounded-md overflow-x-auto;
+}
+
+code {
+  @apply text-sm;
+}

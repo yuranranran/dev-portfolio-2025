@@ -17,17 +17,19 @@ const Header: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 w-full bg-white bg-opacity-30 backdrop-blur-md z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
         {/* Logo with responsive sizing */}
+        <a href="/">
         <img
           src="/assets/home/header-logo.png"
           alt="Logo"
           className="h-16 md:h-20 lg:h-24"
         />
+        </a>
 
         {/* Navigation for larger screens */}
         <nav className="hidden md:flex space-x-8">
           <HeaderLink href="/">Home</HeaderLink>
           <HeaderLink href="/projects">Projects</HeaderLink>
-          <HeaderLink href="/blogs">Blogs</HeaderLink>
+          <HeaderLink href="/posts">Blogs</HeaderLink>
           <HeaderLink href="/about">About Me</HeaderLink>
         </nav>
 

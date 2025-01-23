@@ -1,7 +1,7 @@
 import Container from "@/app/_components/container";
 import { FeatureProjects } from "@/app/_components/feature-projects";
 import { Intro } from "@/app/_components/intro";
-import { MoreStories } from "@/app/_components/more-stories";
+import { AllBlogs } from "@/app/_components/all-blogs";
 import { getAllPosts } from "@/lib/api";
 import { Toolbox } from "@/app/_components/toolbox";
 
@@ -36,24 +36,15 @@ const projects = [
 export default function Index() {
   const allPosts = getAllPosts();
 
-  const heroPost = allPosts[0];
-
   const morePosts = allPosts.slice(0, 3);
 
   return (
     <main >
       <Container>
-        {/* Intro */}
         <Intro />
-
-        {/* Tech stack showcase */}
         <Toolbox />
-
-        {/* 3 feature projects*/}
         <FeatureProjects projects={projects} />
-
-        {/* 3 most recent blog */}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        {morePosts.length > 0 && <AllBlogs title="🎙️ Recent Blogs." posts={morePosts} />}
       </Container>
     </main>
   );
