@@ -1,50 +1,49 @@
 import Container from "@/app/_components/container";
-import { FeatureProjects } from "@/app/_components/feature-projects";
 import { Intro } from "@/app/_components/intro";
-import { AllBlogs } from "@/app/_components/all-blogs";
-import { getAllPosts } from "@/lib/api";
-import { Toolbox } from "@/app/_components/toolbox";
-
-const projects = [
-  {
-    title: "Extra Card - Learn Tab",
-    coverImage: "/images/project1.jpg",
-    excerpt:
-      '"Debit that builds credit" - Design exploration on a customized microlearning experience for personal finance.',
-    slug: "extra-card-learn-tab",
-    tags: ["UX Design", "React", "Microlearning"],
-  },
-  {
-    title: "Video+ - Twitch Recommendation App",
-    coverImage: "/images/project2.jpg",
-    excerpt:
-      "A full-stack web app for discovering Twitch videos, powered by React and Java.",
-    slug: "video-plus-twitch-app",
-    tags: ["Java", "React", "MySQL"],
-  },
-  {
-    title: "Personal Finance Tracker",
-    coverImage: "/images/project3.jpg",
-    excerpt:
-      "A React Native app for tracking and visualizing personal finances in real-time.",
-    slug: "personal-finance-tracker",
-    tags: ["React Native", "Finance", "Visualization"],
-  },
-];
-
+import { AllBlogs } from "@/app/_components/blog/all-blogs";
+import { AllProjects } from "@/app/_components/project/all-projects";
+import { getAllBlogs } from "@/lib/api";
+import { Toolbox } from "@/app/_components/home/toolbox";
+import { getAllProjects } from "@/lib/projects-api";
+import Title from "@/app/_components/title";
+import Link from "next/link";
 
 export default function Index() {
-  const allPosts = getAllPosts();
-
-  const morePosts = allPosts.slice(0, 3);
+  const allBlogs = getAllBlogs();
+  const recentBlogs = allBlogs.slice(0, 3);
+  const allProjects = getAllProjects();
+  const featureProjects = allProjects.slice(0, 3);
 
   return (
-    <main >
+    <main>
       <Container>
         <Intro />
+        <Title title="Proficent in Java, JavaScript."></Title>
         <Toolbox />
-        <FeatureProjects projects={projects} />
-        {morePosts.length > 0 && <AllBlogs title="🎙️ Recent Blogs." posts={morePosts} />}
+        <Title title="Proficent in Java, JavaScript."></Title>
+        {featureProjects.length > 0 && (
+          <AllProjects projects={featureProjects} />
+        )}
+        {/* View more/all Case Study Button */}
+        <div className="flex justify-center mb-8">
+        <Link
+          href={`/projects`}
+          className="inline-block text-black hover:bg-gray-200 px-6 py-3 rounded-full font-light"
+        >
+          View More Projects
+        </Link>
+        </div>
+        <Title title="Proficent in Java, JavaScript."></Title>
+        {recentBlogs.length > 0 && <AllBlogs blogs={recentBlogs} />}
+        {/* View more/all Case Study Button */}
+        <div className="flex justify-center mb-16">
+        <Link
+          href={`/blogs`}
+          className="inline-block text-black hover:bg-gray-200 px-6 py-3 rounded-full font-light"
+        >
+          View More blogs
+        </Link>
+        </div>
       </Container>
     </main>
   );

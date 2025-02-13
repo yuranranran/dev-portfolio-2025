@@ -1,11 +1,13 @@
 export type Project = {
   slug: string;
   title: string;
+  date: string;
   coverImage: string;
   excerpt: string;
-  ogImage: {
-    url: string;
-  };
+  techStack: string[];
+  gallery?: string[];
+  videoDemo?: string;
   content: string;
-  preview?: boolean;
+  tags: string[];
+  layout?: string;
 };

@@ -1,3 +1,5 @@
+import Container from "./container";
+
 export function Toolbox() {
   const skills = [
     {
@@ -26,10 +28,6 @@ export function Toolbox() {
   ];
 
   return (
-    <section className="my-40">
-      <h2 className="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
-        ⚒️ Tools.
-      </h2>
       <div className="space-y-8">
         {skills.map((skillCategory) => (
           <div key={skillCategory.category}>
@@ -56,6 +54,5 @@ export function Toolbox() {
           </div>
         ))}
       </div>
-    </section>
   );
 }

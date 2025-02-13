@@ -1,14 +1,17 @@
 import Footer from "@/app/_components/footer";
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Major_Mono_Display } from "next/font/google";
 import cn from "classnames";
 import ThemeSwitcher from "./_components/theme-switcher";
-
 import "./globals.css";
-import Header from "./_components/header";
 
+// Import both fonts
 const inter = Inter({ subsets: ["latin"] });
+const majorMono = Major_Mono_Display({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: `Amy - Projects and Blog`,
@@ -24,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head>
         <link
           rel="apple-touch-icon"
@@ -50,11 +53,9 @@ export default function RootLayout({
           color="#5bbad5"
         />
       </head>
-      <body className={cn(inter.className, "bg-gray-50 dark:bg-gray-900")}>
-        <Header />
+      <body className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}>
         {children}
         <Footer />
-        {/* <ThemeSwitcher /> */}
       </body>
     </html>
   );

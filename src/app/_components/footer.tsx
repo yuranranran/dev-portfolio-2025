@@ -14,7 +14,7 @@ export function Footer() {
           <div className="flex space-x-4 mt-4 lg:mt-0">
             <a
               href="https://github.com/yuranranran"
-              className="text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white"
+              className="text-gray-600 hover:text-black hover:underline dark:text-gray-300 dark:hover:text-white"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -22,7 +22,7 @@ export function Footer() {
             </a>
             <a
               href="https://linkedin.com/in/yuran-liu"
-              className="text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white"
+              className="text-gray-600 hover:text-black hover:underline dark:text-gray-300 dark:hover:text-white"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -30,7 +30,7 @@ export function Footer() {
             </a>
             <a
               href="/resume.pdf"
-              className="text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white"
+              className="text-gray-600 hover:text-black hover:underline dark:text-gray-300 dark:hover:text-white"
               target="_blank"
               rel="noopener noreferrer"
             >
